@@ -30,6 +30,7 @@ function MyStack(){
 function MyDrawer(){
     return(
         <Drawer.Navigator>
+            <Drawer.Screen name='Dashboard' component={Dashboard}/>
             <Drawer.Screen name='Categorias de Gastos' component={Categorias_Gastos}/>
             <Drawer.Screen name='Registros de Ingresos y Egresos' component={Reg_Ing_Eg}/>
             <Drawer.Screen name='Lista de Gastos e Ingresos' component={List_Gts_Ing}/>
