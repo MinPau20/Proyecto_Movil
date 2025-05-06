@@ -22,7 +22,7 @@ function MyStack(){
             <Stack.Screen name='Inicio' component={Inicio}/>
             <Stack.Screen name='Login' component={Login}/>
             <Stack.Screen name='Registro' component={Registro}/>
-            <Stack.Screen name='Dashboard' component={MyDrawer}/>
+            <Stack.Screen name='Dashboard' component={MyDrawer} options={{ headerShown: false }}/>
         </Stack.Navigator>
     )
 }

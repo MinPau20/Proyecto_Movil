@@ -1,16 +1,16 @@
 import React from "react";
-import { View, text, StyleSheet, Button } from "react-native";
+import { View, Text, StyleSheet, Button } from "react-native";
 import { TextInput,  } from "react-native-gesture-handler";
 
-export default function Login(){
+export default function Login({navigation}){
     return(
         <View style={styles.ContainerLogin}>
             <View style={styles.ContainerLogin2}>
-                <text style={styles.TextoLogin}>Ingresa correo electrónico: </text>
+                <Text style={styles.TextoLogin}>Ingresa correo electrónico: </Text>
                 <TextInput style={styles.InputLogin} placeholder="Correo electrónico" />
             </View>
             <View style={styles.ContainerLogin2}>
-                <text style={styles.TextoLogin}>Ingresa contraseña: </text>
+                <Text style={styles.TextoLogin}>Ingresa contraseña: </Text>
                 <TextInput style={styles.InputLogin} placeholder="Contraseña" />
             </View>
             <Button title="Entrar" onPress={() => navigation.navigate("Dashboard")} color="#CCD5AE"/>
