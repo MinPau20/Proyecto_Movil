@@ -3,6 +3,8 @@ import { View } from "react-native";
 
 export default function Categorias_Gastos({navigation}){
     return(
-        <View>Hola</View>
+        <View>
+            <Text>Hola</Text>
+            </View>
     )
 }
