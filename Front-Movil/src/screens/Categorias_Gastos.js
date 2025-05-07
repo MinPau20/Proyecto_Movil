@@ -6,24 +6,40 @@ export default function Categorias_Gastos({navigation}){
 
     return(
         <View style={styles.ContainerCategorias}>
+            <Text style={styles.Titulo}>Tus categorías actuales</Text>
             <View style={styles.ContainerCategorias2}>
                 <View style={styles.ContainerCard}>
+                    <TouchableOpacity style={styles.BotonEliminar}>
+                        <Text style={styles.TextoEliminar}>×</Text>
+                    </TouchableOpacity>
                     <View style={styles.Card}></View>
                     <Text style={styles.TextCard}>Casa</Text>
                 </View>
                 <View style={styles.ContainerCard}>
+                    <TouchableOpacity style={styles.BotonEliminar}>
+                        <Text style={styles.TextoEliminar}>×</Text>
+                    </TouchableOpacity>
                     <View style={styles.Card}></View>
                     <Text style={styles.TextCard}>Ocio</Text>
                 </View>
                 <View style={styles.ContainerCard}>
+                    <TouchableOpacity style={styles.BotonEliminar}>
+                        <Text style={styles.TextoEliminar}>×</Text>
+                    </TouchableOpacity>
                     <View style={styles.Card}></View>
                     <Text style={styles.TextCard}>Educación</Text>
                 </View>
                 <View style={styles.ContainerCard}>
+                    <TouchableOpacity style={styles.BotonEliminar}>
+                        <Text style={styles.TextoEliminar}>×</Text>
+                    </TouchableOpacity>
                     <View style={styles.Card}></View>
                     <Text style={styles.TextCard}>Transporte</Text>
                 </View>
                 <View style={styles.ContainerCard}>
+                    <TouchableOpacity style={styles.BotonEliminar}>
+                        <Text style={styles.TextoEliminar}>×</Text>
+                    </TouchableOpacity>
                     <View style={styles.Card}></View>
                     <Text style={styles.TextCard}>Alimentos</Text>
                 </View>
@@ -56,6 +72,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         flexDirection: 'row',
         flexWrap: 'wrap'
+    },
+    Titulo: {
+        fontSize: 30
     },
     ContainerCategorias2: {
         display: 'flex',
@@ -111,4 +130,22 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         marginBottom: 16,
     },
+    BotonEliminar: {
+        position: 'absolute',
+        top: 5,
+        right: 5,
+        zIndex: 10,
+        backgroundColor: 'red',
+        borderRadius: 10,
+        width: 20,
+        height: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+      TextoEliminar: {
+        color: 'white',
+        fontSize: 12,
+        fontWeight: 'bold',
+        lineHeight: 18,
+      },
 })
