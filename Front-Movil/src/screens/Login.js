@@ -16,6 +16,7 @@ export default function Login({navigation}){
                 </View>
                 <Button title="Entrar" onPress={() => navigation.navigate("Dashboard")} color="#CCD5AE"/>
             </View>
+            <Text style={styles.MarcaAgua} >Acciones & Gestión S.A.S</Text>
         </View>
     )
 }
@@ -56,4 +57,11 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         marginBottom: 16,
     },    
+    MarcaAgua:{
+        color: '#CAC080',
+        fontSize: 10,
+        fontFamily: 'Pacifico',
+        position: 'absolute',
+        bottom: 10,
+    }
 });
