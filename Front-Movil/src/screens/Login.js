@@ -21,7 +21,7 @@ export default function Login({navigation}){
 const styles = StyleSheet.create({
     ContainerLogin: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#FEFAE0',
       alignItems: 'center',
       justifyContent: 'center',
     },
