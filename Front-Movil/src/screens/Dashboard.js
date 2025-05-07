@@ -41,27 +41,30 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontFamily: 'Pacifico',
         color: '#463f3a',
+        textAlign: 'center'
     },
     DashboardIcon:{
         margin: 20,
     },    
     CuadritoDash: {
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: 'column',
     },
     IconosDash: {
-        margin: 5,
-        width: 100,
+        margin: 20,
+        width: 115,
+        height:115,
         backgroundColor: '#E9EDC9',
         alignItems: 'center',
         justifyContent: 'space-around',    
-        borderRadius: 20,
+        borderRadius: 40,
     },
     TextoiconDashboard:{
         fontSize: 10,
         fontFamily: 'Pacifico',
         marginTop: 5,
         color: '#463f3a',
+        textAlign: 'center'
     },
     MarcaAgua:{
         color: '#CAC080',
