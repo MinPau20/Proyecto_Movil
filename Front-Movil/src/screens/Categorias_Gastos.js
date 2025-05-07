@@ -74,7 +74,8 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap'
     },
     Titulo: {
-        fontSize: 30
+        fontSize: 30,
+        color: '#463f3a'
     },
     ContainerCategorias2: {
         display: 'flex',
@@ -105,7 +106,7 @@ const styles = StyleSheet.create({
       backgroundColor: 'white',
     },
     TextCard: {
-        textShadowColor: 'black'
+        color: '#463f3a'
     },
     CuadroCategoria: {
         position: 'absolute',
@@ -135,7 +136,7 @@ const styles = StyleSheet.create({
         top: 5,
         right: 5,
         zIndex: 10,
-        backgroundColor: 'red',
+        backgroundColor: '#cd9777',
         borderRadius: 10,
         width: 20,
         height: 20,
