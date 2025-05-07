@@ -35,6 +35,7 @@ function MyDrawer(){
             <Drawer.Screen name='Registros de Ingresos y Egresos' component={Reg_Ing_Eg}/>
             <Drawer.Screen name='Lista de Gastos e Ingresos' component={List_Gts_Ing}/>
             <Drawer.Screen name='Análisis de Gastos e Ingresos' component={Analisis_Gts_Ing}/>
+            <Drawer.Screen name='Cerrar Sesión' component={Inicio}/>
         </Drawer.Navigator>
     )
 }
