@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     ContainerCategorias:{
         flex: 1,
         display: 'flex',
-        backgroundColor: 'white',
+        backgroundColor: '#FEFAE0',
         alignContent: 'space-around',
         justifyContent: 'space-around',
         flexDirection: 'row',
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         width: 320,
         height: 550,
-        backgroundColor: 'gray',
+        backgroundColor: '#E9EDC9',
         flexDirection: 'row',
         flexWrap: 'wrap',
         borderRadius: 20
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
         height: 120,
         display: 'flex',
         paddingTop: StatusBar.currentHeight || 30,
-        backgroundColor: 'gray',
+        backgroundColor: '#E9EDC9',
         alignItems: 'center',
         borderRadius: 20
     },

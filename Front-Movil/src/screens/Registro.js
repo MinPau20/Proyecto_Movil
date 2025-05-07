@@ -24,7 +24,7 @@ export default function Registro({navigation}){
 const styles = StyleSheet.create({
     ContainerRegistro: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#FEFAE0',
         alignItems: 'center',
         justifyContent: 'center',
       },
