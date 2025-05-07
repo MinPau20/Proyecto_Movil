@@ -5,15 +5,17 @@ import { TextInput,  } from "react-native-gesture-handler";
 export default function Login({navigation}){
     return(
         <View style={styles.ContainerLogin}>
-            <View style={styles.ContainerLogin2}>
-                <Text style={styles.TextoLogin}>Ingresa correo electrónico: </Text>
-                <TextInput style={styles.InputLogin} placeholder="Correo electrónico" />
+            <View style={styles.CuadritoLogin}>
+                <View style={styles.ContainerLogin2}>
+                    <Text style={styles.TextoLogin}>Ingresa correo electrónico: </Text>
+                    <TextInput style={styles.InputLogin} placeholder="Correo electrónico" />
+                </View>
+                <View style={styles.ContainerLogin2}>
+                    <Text style={styles.TextoLogin}>Ingresa contraseña: </Text>
+                    <TextInput style={styles.InputLogin} placeholder="Contraseña" />
+                </View>
+                <Button title="Entrar" onPress={() => navigation.navigate("Dashboard")} color="#CCD5AE"/>
             </View>
-            <View style={styles.ContainerLogin2}>
-                <Text style={styles.TextoLogin}>Ingresa contraseña: </Text>
-                <TextInput style={styles.InputLogin} placeholder="Contraseña" />
-            </View>
-            <Button title="Entrar" onPress={() => navigation.navigate("Dashboard")} color="#CCD5AE"/>
         </View>
     )
 }
@@ -21,23 +23,34 @@ export default function Login({navigation}){
 const styles = StyleSheet.create({
     ContainerLogin: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#FEFAE0',
       alignItems: 'center',
       justifyContent: 'center',
     },
+    CuadritoLogin: {
+        width: 300, 
+        backgroundColor: '#E9EDC9',
+        alignItems: 'center',
+        justifyContent: 'space-around',    
+        borderRadius: 20,
+    },
     ContainerLogin2:{
+        marginTop: 15,
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: 'column',
     },
     TextoLogin: {
-        borderWidth: 1,
+        fontSize: 23,
+        fontFamily: 'Pacifico',
+        color: '#463f3a',
         paddingHorizontal: 10,
         borderRadius: 5,
-        marginBottom: 16,
     },
     InputLogin: {
         height: 40,
-        borderColor: "#ccc",
+        borderColor: "#6b705c",
+        color: '#CCD5AE',
+        fontFamily: 'Pacifico',
         borderWidth: 1,
         paddingHorizontal: 10,
         borderRadius: 5,

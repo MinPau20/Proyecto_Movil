@@ -18,7 +18,10 @@ const Drawer = createDrawerNavigator()
 
 function MyStack(){
     return(
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{
+            headerStyle: {backgroundColor: '#FAEDCD'},
+            headerTintColor: '#463f3a'
+        }}>
             <Stack.Screen name='Inicio' component={Inicio}/>
             <Stack.Screen name='Login' component={Login}/>
             <Stack.Screen name='Registro' component={Registro}/>
@@ -29,7 +32,14 @@ function MyStack(){
 
 function MyDrawer(){
     return(
-        <Drawer.Navigator>
+        <Drawer.Navigator screenOptions={{
+            drawerStyle: { backgroundColor: '#FAEDCD'},
+            drawerActiveTintColor: '#D4A373', 
+            drawerInactiveTintColor: '#463f3a',
+            headerStyle: {backgroundColor: '#FAEDCD'},
+            headerTintColor: '#463f3a'
+        }}>
+            
             <Drawer.Screen name='Dashboard' component={Dashboard}/>
             <Drawer.Screen name='Categorias de Gastos' component={Categorias_Gastos}/>
             <Drawer.Screen name='Registros de Ingresos y Egresos' component={Reg_Ing_Eg}/>
