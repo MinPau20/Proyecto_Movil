@@ -9,21 +9,19 @@ export default function Dashboard(){
                 <View style={styles.CuadritoDash}>
                     <View style={styles.IconosDash}>
                         <Image source={require('../Icons/Categoria-icon.png')} ></Image>
-                        <Text style={styles.TextoDashboard} >Categorias de Gastos</Text>
+                        <Text style={styles.TextoiconDashboard} >Categorias de Gastos</Text>
                     </View>
                     <View style={styles.IconosDash}>
                         <Image source={require('../Icons/Registro-icon.png')} ></Image>
-                        <Text style={styles.TextoDashboard} >Registros de Ingresos y Egresos</Text>
+                        <Text style={styles.TextoiconDashboard} >Registros de Ingresos y Egresos</Text>
                     </View>
-                </View>
-                <View style={styles.CuadritoDash}>
                     <View style={styles.IconosDash}>
                         <Image source={require('../Icons/Lista-icon.png')} ></Image>
-                        <Text style={styles.TextoDashboard} >Lista de Gastos e Ingresos</Text>
+                        <Text style={styles.TextoiconDashboard} >Lista de Gastos e Ingresos</Text>
                     </View>
                     <View style={styles.IconosDash}>
                         <Image source={require('../Icons/Analisis-icon.png')} ></Image>
-                        <Text style={styles.TextoDashboard} >Análisis de Gastos e Ingresos</Text>
+                        <Text style={styles.TextoiconDashboard} >Análisis de Gastos e Ingresos</Text>
                     </View>
                 </View>
             </View>
@@ -39,23 +37,30 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
+    TextoDashboard:{
+        fontSize: 30,
+        fontFamily: 'Pacifico',
+        color: '#463f3a',
+    },
     DashboardIcon:{
         margin: 20,
     },    
     CuadritoDash: {
+        display: 'flex',
         flexDirection: 'row',
     },
     IconosDash: {
         margin: 5,
-        width: 200,
+        width: 100,
         backgroundColor: '#E9EDC9',
         alignItems: 'center',
         justifyContent: 'space-around',    
         borderRadius: 20,
     },
-    TextoDashboard:{
-        fontSize: 20,
+    TextoiconDashboard:{
+        fontSize: 10,
         fontFamily: 'Pacifico',
+        marginTop: 5,
         color: '#463f3a',
     },
     MarcaAgua:{
