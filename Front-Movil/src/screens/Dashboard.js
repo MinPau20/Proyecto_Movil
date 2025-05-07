@@ -7,26 +7,26 @@ export default function Dashboard({navigation}){
             <Text style={styles.TextoDashboard} >Bienvenid@, Esperamos que tenga una buena experiecia</Text>
             <View style={styles.DashboardIcon}>
                 <View style={styles.CuadritoDash}>
-                    <View style={styles.IconosDash}>
-                        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Categorias de Gastos')}>
+                    <View>
+                        <TouchableOpacity style={styles.IconosDash} onPress={() => navigation.navigate('Categorias de Gastos')}>
                         <Image source={require('../Icons/Categoria-icon.png')} ></Image>
                         <Text style={styles.TextoiconDashboard} >Categorias de Gastos</Text>
                         </TouchableOpacity>
                     </View>
-                    <View style={styles.IconosDash}>
-                        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Registros de Ingresos y Egresos')}>
+                    <View>
+                        <TouchableOpacity style={styles.IconosDash} onPress={() => navigation.navigate('Registros de Ingresos y Egresos')}>
                         <Image source={require('../Icons/Registro-icon.png')} ></Image>
                         <Text style={styles.TextoiconDashboard} >Registros de Ingresos y Egresos</Text>
                         </TouchableOpacity>
                     </View>
-                    <View style={styles.IconosDash}>
-                        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Lista de Gastos e Ingresos')}>
+                    <View>
+                        <TouchableOpacity style={styles.IconosDash} onPress={() => navigation.navigate('Lista de Gastos e Ingresos')}>
                         <Image source={require('../Icons/Lista-icon.png')} ></Image>
                         <Text style={styles.TextoiconDashboard} >Lista de Gastos e Ingresos</Text>
                         </TouchableOpacity>
                     </View>
-                    <View style={styles.IconosDash}>
-                    <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Análisis de Gastos e Ingresos')}>
+                    <View>
+                    <TouchableOpacity style={styles.IconosDash} onPress={() => navigation.navigate('Análisis de Gastos e Ingresos')}>
                         <Image source={require('../Icons/Analisis-icon.png')} ></Image>
                         <Text style={styles.TextoiconDashboard} >Análisis de Gastos e Ingresos</Text>
                         </TouchableOpacity>
@@ -58,12 +58,13 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
     },
-    IconosDash: {
+    IconosDash:{
         margin: 20,
         width: 115,
         height:115,
         backgroundColor: '#E9EDC9',
         alignItems: 'center',
+        justifyContent: 'space-around',    
         borderRadius: 40,
     },
     TextoiconDashboard:{
