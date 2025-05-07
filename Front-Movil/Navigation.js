@@ -22,7 +22,7 @@ function MyStack(){
             headerStyle: {backgroundColor: '#FAEDCD'},
             headerTintColor: '#463f3a'
         }}>
-            <Stack.Screen name='Inicio' component={Inicio}/>
+            <Stack.Screen name='Inicio' component={Inicio} options={{ headerShown: false }}/>
             <Stack.Screen name='Login' component={Login}/>
             <Stack.Screen name='Registro' component={Registro}/>
             <Stack.Screen name='Dashboard' component={MyDrawer} options={{ headerShown: false }}/>
@@ -45,7 +45,7 @@ function MyDrawer(){
             <Drawer.Screen name='Registros de Ingresos y Egresos' component={Reg_Ing_Eg}/>
             <Drawer.Screen name='Lista de Gastos e Ingresos' component={List_Gts_Ing}/>
             <Drawer.Screen name='Análisis de Gastos e Ingresos' component={Analisis_Gts_Ing}/>
-            <Drawer.Screen name='Cerrar Sesión' component={Inicio}/>
+            <Drawer.Screen name='Cerrar Sesión' component={Inicio} options={{ headerShown: false }}/>
         </Drawer.Navigator>
     )
 }
