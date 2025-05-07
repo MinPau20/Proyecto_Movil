@@ -1,7 +1,9 @@
-import React from "react";
-import { StyleSheet, View, Text, TouchableOpacity, StatusBar } from "react-native";
+import React, {useState} from "react";
+import { StyleSheet, View, Text, TouchableOpacity, StatusBar, TextInput } from "react-native";
 
 export default function Categorias_Gastos({navigation}){
+    const [mostrarCuadro, setMostrarCuadro] = useState(false);
+
     return(
         <View style={styles.ContainerCategorias}>
             <View style={styles.ContainerCategorias2}>
@@ -26,12 +28,21 @@ export default function Categorias_Gastos({navigation}){
                     <Text style={styles.TextCard}>Alimentos</Text>
                 </View>
                 <View style={styles.ContainerCard}>
-                    <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
+                    <TouchableOpacity onPress={() => setMostrarCuadro(true)}>
                         <View style={styles.Card}></View>
                         <Text style={styles.TextCard}>Agregar</Text>
                     </TouchableOpacity>
                 </View>
             </View>
+            {mostrarCuadro && (
+                    <View style={styles.CuadroCategoria}>
+                        <Text style={{ color: 'black' }}>Nombre de la categoría:</Text>
+                        <TextInput style={styles.InputCategorias} placeholder="Categoría" />
+                        <TouchableOpacity onPress={() => setMostrarCuadro(false)}>
+                        <Text style={{ color: 'blue' }}>Cerrar</Text>
+                        </TouchableOpacity>
+                    </View>
+                    )}
         </View> 
     )
 }
@@ -76,5 +87,28 @@ const styles = StyleSheet.create({
     },
     TextCard: {
         textShadowColor: 'black'
-    }
+    },
+    CuadroCategoria: {
+        position: 'absolute',
+        width: 200,
+        height: 100, 
+        top: 150,
+        left: 80,
+        right: 70,
+        padding: 20,
+        backgroundColor: 'white',
+        borderRadius: 15,
+        alignItems: 'center',
+        zIndex: 100,
+    },
+    InputCategorias: {
+        height: 40,
+        borderColor: "#6b705c",
+        color: '#CCD5AE',
+        fontFamily: 'Pacifico',
+        borderWidth: 1,
+        paddingHorizontal: 10,
+        borderRadius: 5,
+        marginBottom: 16,
+    },
 })
