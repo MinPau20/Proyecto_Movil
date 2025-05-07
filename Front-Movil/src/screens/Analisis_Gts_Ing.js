@@ -1,9 +1,15 @@
 import React from "react";
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { BarChart } from 'react-native-gifted-charts';
 
 export default function AnalisisFinanciero() {
+    const barData = [
+        { value: 10000, label: 'Ingresos', frontColor: '#ccd5ae' },
+        { value: 5000, label: 'Gastos', frontColor: '#6b705c' },
+      ]
+
   return (
-    <View style={styles.ContainerAnalisis}>
+    <ScrollView style={styles.ContainerAnalisis}>
       <Text style={styles.Titulo}>Análisis de Ingresos y Gastos</Text>
 
       <View style={styles.Card}>
@@ -26,10 +32,26 @@ export default function AnalisisFinanciero() {
       </View>
 
       <View style={styles.Card}>
-        <Text style={styles.Subtitulo}>Relación Ingresos/Gastos</Text>
+        <Text style={styles.Subtitulo}>Relación Ingresos-Gastos</Text>
         <Text style={styles.valor}>Positivo (+$250)</Text>
       </View>
-    </View>
+
+      <View style={styles.Card}>
+        <Text style={styles.Subtitulo}>Relación Ingresos-Gastos</Text>
+        <BarChart 
+            data={barData}
+            barWidth={40}
+            stepValue={2000}
+            maxValue={10000}
+            frontColor="lightblue"
+            yAxisLabelPrefix="$"
+            yAxisTextStyle={{ color: 'gray' }}
+            xAxisLabelTextStyle={{ color: 'gray' }}
+            yAxisLabelWidth={50}
+            isAnimated
+        />
+      </View>
+    </ScrollView>
   );
 }
 
