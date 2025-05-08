@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
-import { FlatList } from 'react-native-web';
+import { View, Text, StyleSheet, FlatList, ScrollView } from "react-native";
 import { Picker } from '@react-native-picker/picker';
 
 export default function List_Gts_Ing({navigation}){
@@ -75,7 +74,6 @@ export default function List_Gts_Ing({navigation}){
 
     return(
         <View style={styles.ContainerLista}>
-            
             <Text style={styles.TituloLista}>Lista de Gastos e Ingresos</Text>
             <Picker
                 selectedValue={tipo}
@@ -87,24 +85,19 @@ export default function List_Gts_Ing({navigation}){
                 <Picker.Item label="Ingresos" value="Ingresos" />
                 <Picker.Item label="Gastos" value="Gastos" />
             </Picker>
-            <View>
             <FlatList
                 data={data}
                 keyExtractor={(item)=> item.id}
                 renderItem={({item}) => (
-                    <ScrollView>
-                        <View style={styles.ficha}>
-                        <Text style={styles.TituloLista2}>{item.tipo}</Text>
-                        <Text style={styles.TextoLista}>Cantidad: {item.cantidad}</Text>
-                        <Text style={styles.TextoLista}>Descripción: {item.descripcion}</Text>
-                        <Text style={styles.TextoLista}>Categoria: {item.categoria}</Text>
-                        <Text style={styles.TextoLista}>Fecha: {item.fecha}</Text>
-                        </View>
-                    </ScrollView>
+                <View style={styles.ficha}>
+                  <Text style={styles.TituloLista2}>{item.tipo}</Text>
+                  <Text style={styles.TextoLista}>Cantidad: {item.cantidad}</Text>
+                  <Text style={styles.TextoLista}>Descripción: {item.descripcion}</Text>
+                  <Text style={styles.TextoLista}>Categoria: {item.categoria}</Text>
+                  <Text style={styles.TextoLista}>Fecha: {item.fecha}</Text>
+                  </View>
                 )}
-                
             />
-            </View>
             <Text style={styles.MarcaAgua} >Acciones & Gestión S.A.S</Text>
         </View>
     )
@@ -158,5 +151,8 @@ const styles = StyleSheet.create({
         fontFamily: 'Pacifico',
         position: 'absolute',
         bottom: 10,
+    },
+    CajitaLista: {
+      flex: 1
     }
 });
