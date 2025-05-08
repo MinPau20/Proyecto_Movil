@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { StyleSheet, View, Text, TouchableOpacity, StatusBar, TextInput } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, StatusBar, TextInput, Image } from "react-native";
 
 export default function Categorias_Gastos({navigation}){
     const [mostrarCuadro, setMostrarCuadro] = useState(false);
@@ -12,40 +12,40 @@ export default function Categorias_Gastos({navigation}){
                     <TouchableOpacity style={styles.BotonEliminar}>
                         <Text style={styles.TextoEliminar}>×</Text>
                     </TouchableOpacity>
-                    <View style={styles.Card}></View>
+                    <Image source={require('../Icons/Casa-icon.png')}></Image>
                     <Text style={styles.TextCard}>Casa</Text>
                 </View>
                 <View style={styles.ContainerCard}>
                     <TouchableOpacity style={styles.BotonEliminar}>
                         <Text style={styles.TextoEliminar}>×</Text>
                     </TouchableOpacity>
-                    <View style={styles.Card}></View>
+                    <Image source={require('../Icons/Ocio-icon.png')}></Image>
                     <Text style={styles.TextCard}>Ocio</Text>
                 </View>
                 <View style={styles.ContainerCard}>
                     <TouchableOpacity style={styles.BotonEliminar}>
                         <Text style={styles.TextoEliminar}>×</Text>
                     </TouchableOpacity>
-                    <View style={styles.Card}></View>
+                    <Image source={require('../Icons/Educacion-icon.png')}></Image>
                     <Text style={styles.TextCard}>Educación</Text>
                 </View>
                 <View style={styles.ContainerCard}>
                     <TouchableOpacity style={styles.BotonEliminar}>
                         <Text style={styles.TextoEliminar}>×</Text>
                     </TouchableOpacity>
-                    <View style={styles.Card}></View>
+                    <Image source={require('../Icons/Transporte-icon.png')}></Image>
                     <Text style={styles.TextCard}>Transporte</Text>
                 </View>
                 <View style={styles.ContainerCard}>
                     <TouchableOpacity style={styles.BotonEliminar}>
                         <Text style={styles.TextoEliminar}>×</Text>
                     </TouchableOpacity>
-                    <View style={styles.Card}></View>
+                    <Image source={require('../Icons/Alimentos-icon.png')}></Image>
                     <Text style={styles.TextCard}>Alimentos</Text>
                 </View>
                 <View style={styles.ContainerCard}>
                     <TouchableOpacity onPress={() => setMostrarCuadro(true)}>
-                        <View style={styles.Card}></View>
+                        <Image source={require('../Icons/Agregar-icon.png')}></Image>
                         <Text style={styles.TextCard}>Agregar</Text>
                     </TouchableOpacity>
                 </View>
@@ -94,16 +94,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#E9EDC9',
         alignItems: 'center',
         borderRadius: 20
-    },
-    Card: {
-      width: 50,
-      height: 50,
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginBottom: 10,
-      padding: 10,
-      borderRadius: 30,
-      backgroundColor: 'white',
     },
     TextCard: {
         color: '#463f3a'
