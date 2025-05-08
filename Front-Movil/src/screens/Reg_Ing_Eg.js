@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
         color: '#463f3a',
         paddingHorizontal: 10,
         borderRadius: 5,
+        alignItems: 'center'
     },
     CuadritoRegistro: {
         width: 300, 

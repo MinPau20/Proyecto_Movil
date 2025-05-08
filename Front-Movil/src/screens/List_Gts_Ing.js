@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, FlatList, ScrollView } from "react-native";
+import { View, Text, StyleSheet, FlatList } from "react-native";
 import { Picker } from '@react-native-picker/picker';
 
 export default function List_Gts_Ing({navigation}){
@@ -106,9 +106,10 @@ export default function List_Gts_Ing({navigation}){
 const styles = StyleSheet.create({
     ContainerLista: {
         flex: 1,
+        display: 'flex',
         backgroundColor: '#FEFAE0',
         alignItems: 'center',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-around',
       },
     TituloLista:{
         fontSize: 42,
@@ -132,7 +133,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     TextoLista:{
-        fontSize: 20,
+        fontSize: 18,
         fontFamily: 'Pacifico',
         marginTop: 5,
         color: '#463f3a',
