@@ -67,20 +67,21 @@ const styles = StyleSheet.create({
     ContainerCategorias:{
         flex: 1,
         display: 'flex',
-        backgroundColor: 'white',
+        backgroundColor: '#FEFAE0',
         alignContent: 'space-around',
         justifyContent: 'space-around',
         flexDirection: 'row',
         flexWrap: 'wrap'
     },
     Titulo: {
-        fontSize: 30
+        fontSize: 30,
+        color: '#463f3a'
     },
     ContainerCategorias2: {
         display: 'flex',
         width: 320,
         height: 550,
-        backgroundColor: 'gray',
+        backgroundColor: '#E9EDC9',
         flexDirection: 'row',
         flexWrap: 'wrap',
         borderRadius: 20
@@ -90,7 +91,7 @@ const styles = StyleSheet.create({
         height: 120,
         display: 'flex',
         paddingTop: StatusBar.currentHeight || 30,
-        backgroundColor: 'gray',
+        backgroundColor: '#E9EDC9',
         alignItems: 'center',
         borderRadius: 20
     },
@@ -105,7 +106,7 @@ const styles = StyleSheet.create({
       backgroundColor: 'white',
     },
     TextCard: {
-        textShadowColor: 'black'
+        color: '#463f3a'
     },
     CuadroCategoria: {
         position: 'absolute',
@@ -135,7 +136,7 @@ const styles = StyleSheet.create({
         top: 5,
         right: 5,
         zIndex: 10,
-        backgroundColor: 'red',
+        backgroundColor: '#cd9777',
         borderRadius: 10,
         width: 20,
         height: 20,
