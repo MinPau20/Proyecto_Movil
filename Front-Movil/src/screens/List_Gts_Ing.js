@@ -88,6 +88,7 @@ export default function List_Gts_Ing({navigation}){
             <FlatList
                 data={data}
                 keyExtractor={(item)=> item.id}
+                contentContainerStyle={{ paddingBottom: 50 }}
                 renderItem={({item}) => (
                 <View style={styles.ficha}>
                   <Text style={styles.TituloLista2}>{item.tipo}</Text>
