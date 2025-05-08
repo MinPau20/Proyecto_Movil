@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { FlatList } from 'react-native-web';
 import { Picker } from '@react-native-picker/picker';
 
@@ -19,7 +19,7 @@ export default function List_Gts_Ing({navigation}){
           },
           {
             id: '2',
-            tipo: 'Gasto',
+            tipo: 'Ingreso',
             descripcion: 'Emprendimiento pulseras',
             cantidad: 120000,
             categoria: 'Trabajo Extra',
@@ -75,6 +75,7 @@ export default function List_Gts_Ing({navigation}){
 
     return(
         <View style={styles.ContainerLista}>
+            
             <Text style={styles.TituloLista}>Lista de Gastos e Ingresos</Text>
             <Picker
                 selectedValue={tipo}
@@ -91,13 +92,15 @@ export default function List_Gts_Ing({navigation}){
                 data={data}
                 keyExtractor={(item)=> item.id}
                 renderItem={({item}) => (
-                <View style={styles.ficha}>
-                    <Text style={styles.TituloLista2}>{item.tipo}</Text>
-                    <Text style={styles.TextoLista}>Cantidad: {item.cantidad}</Text>
-                    <Text style={styles.TextoLista}>Descripción: {item.descripcion}</Text>
-                    <Text style={styles.TextoLista}>Categoria: {item.categoria}</Text>
-                    <Text style={styles.TextoLista}>Fecha: {item.fecha}</Text>
-                </View>
+                    <ScrollView>
+                        <View style={styles.ficha}>
+                        <Text style={styles.TituloLista2}>{item.tipo}</Text>
+                        <Text style={styles.TextoLista}>Cantidad: {item.cantidad}</Text>
+                        <Text style={styles.TextoLista}>Descripción: {item.descripcion}</Text>
+                        <Text style={styles.TextoLista}>Categoria: {item.categoria}</Text>
+                        <Text style={styles.TextoLista}>Fecha: {item.fecha}</Text>
+                        </View>
+                    </ScrollView>
                 )}
                 
             />
