@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     IconosDash:{
-        margin: 20,
+        margin: 5,
         width: 115,
         height:115,
         backgroundColor: '#E9EDC9',
