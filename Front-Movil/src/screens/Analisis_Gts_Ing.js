@@ -9,7 +9,7 @@ export default function AnalisisFinanciero() {
       ]
 
   return (
-    <ScrollView style={styles.ContainerAnalisis}>
+    <ScrollView style={styles.ContainerAnalisis} contentContainerStyle={{ paddingBottom: 60 }}>
       <Text style={styles.Titulo}>Análisis de Ingresos y Gastos</Text>
 
       <View style={styles.Card}>
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     color: '#CAC080',
     fontSize: 10,
     fontFamily: 'Pacifico',
-    position: 'absolute',
-    bottom: 10,
+    textAlign: 'center',
+    marginVertical: 20,
   }
 });
