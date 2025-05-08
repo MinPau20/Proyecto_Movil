@@ -51,6 +51,7 @@ export default function AnalisisFinanciero() {
             isAnimated
         />
       </View>
+      <Text style={styles.MarcaAgua} >Acciones & Gestión S.A.S</Text>
     </ScrollView>
   );
 }
@@ -96,4 +97,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#6b705c",
   },
+  MarcaAgua:{
+    color: '#CAC080',
+    fontSize: 10,
+    fontFamily: 'Pacifico',
+    position: 'absolute',
+    bottom: 10,
+  }
 });

@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: '#FEFAE0',
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'flex-start',
     },
     TextoDashboard:{
         fontSize: 30,

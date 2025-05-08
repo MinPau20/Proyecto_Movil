@@ -59,6 +59,7 @@ export default function Categorias_Gastos({navigation}){
                         </TouchableOpacity>
                     </View>
                     )}
+            <Text style={styles.MarcaAgua} >Acciones & Gestión S.A.S</Text>
         </View> 
     )
 }
@@ -132,11 +133,18 @@ const styles = StyleSheet.create({
         height: 20,
         alignItems: 'center',
         justifyContent: 'center',
-      },
-      TextoEliminar: {
+    },
+    TextoEliminar: {
         color: 'white',
         fontSize: 12,
         fontWeight: 'bold',
         lineHeight: 18,
-      },
+    },
+    MarcaAgua:{
+        color: '#CAC080',
+        fontSize: 10,
+        fontFamily: 'Pacifico',
+        position: 'absolute',
+        bottom: 10,
+    }
 })
