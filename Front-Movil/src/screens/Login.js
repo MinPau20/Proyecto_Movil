@@ -1,20 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 
 export default function Login({navigation}){
+
+    const [login, setLogin] = useState({ email: '', contraseña: ''})
+
+    const handleChange = (e) => {
+        setLogin({...login, [e.target.name]: e.target.value})
+    }
+
+    const handleSubmit = async () => {
+        try {
+            const response = await fetch("http://localhost:3000/ingreso", {
+                method: "POST",
+                headers: { "Content-Type": "application/json"},
+                body: JSON.stringify(login)
+            })
+
+            const data = await response.json()
+
+            if (response.ok){
+                setLogin(data.usuario)
+                console.log(data.usuario)
+                alert(data.message)
+                localStorage.setItem('usuario', JSON.stringify(data.usuario))
+                navigation.navigate("Dashboard")
+            } else {
+                alert(data.message)
+            }
+        } catch (error){
+            console.error("Error en el inicio de sesión: ", error)
+
+        }
+    }
+
     return(
         <View style={styles.ContainerLogin}>
             <View style={styles.CuadritoLogin}>
                 <View style={styles.ContainerLogin2}>
                     <Text style={styles.TextoLogin}>Ingresa correo electrónico: </Text>
-                    <TextInput style={styles.InputLogin} placeholder="Correo electrónico" />
+                    <TextInput 
+                        style={styles.InputLogin} 
+                        placeholder="Correo electrónico"
+                        value={login.email}
+                        onChangeText={(Text) => setLogin({...login, email: Text})}
+                     />
                 </View>
                 <View style={styles.ContainerLogin2}>
                     <Text style={styles.TextoLogin}>Ingresa contraseña: </Text>
-                    <TextInput style={styles.InputLogin} placeholder="Contraseña" />
+                    <TextInput 
+                        style={styles.InputLogin} 
+                        placeholder="Contraseña" 
+                        value={login.contraseña}
+                        secureTextEntry 
+                        onChangeText={(text) => setLogin({...login, contraseña: text})}
+                    />
                 </View>
-                <Button title="Entrar" onPress={() => navigation.navigate("Dashboard")} color="#CCD5AE"/>
+                <Button title="Entrar" onPress={handleSubmit} color="#CCD5AE"/>
             </View>
             <Text style={styles.MarcaAgua} >Acciones & Gestión S.A.S</Text>
         </View>
