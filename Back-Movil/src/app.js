@@ -11,7 +11,7 @@ app.use(express.json())
 app.set('port', process.env.PORT || 3000)
 
 //Configuración de cors
-app.use(cors({origin: 'http://localhost:5173'}))
+app.use(cors({origin: '*'}))
 app.use('/api', router)
 
 export default app
