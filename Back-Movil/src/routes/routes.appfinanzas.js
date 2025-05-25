@@ -10,7 +10,7 @@ const router = Router()
 //Rutas
 router.post('/ingreso', login)
 router.post('/registro', registro)
-router.post('categorias', categorias)
+router.post('/categorias', categorias)
 router.post('/registrar_movimiento', registrar_movimiento)
 router.post('/listar_movimientos', listar)
 router.post('/analisis', analizar)

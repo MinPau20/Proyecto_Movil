@@ -1,14 +1,10 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { TextInput } from "react-native-gesture-handler";
 
 export default function Login({navigation}){
-
     const [login, setLogin] = useState({ email: '', contraseña: ''})
-
-    const handleChange = (e) => {
-        setLogin({...login, [e.target.name]: e.target.value})
-    }
 
     const handleSubmit = async () => {
         try {
@@ -21,11 +17,9 @@ export default function Login({navigation}){
             const data = await response.json()
 
             if (response.ok){
-                setLogin(data.usuario)
-                console.log(data.usuario)
-                alert(data.message)
-                localStorage.setItem('usuario', JSON.stringify(data.usuario))
-                navigation.navigate("Dashboard")
+                await AsyncStorage.setItem('token', data.token)
+                await AsyncStorage.setItem('usuario', JSON.stringify(data.usuario))
+                navigation.navigate("Dashboard");
             } else {
                 alert(data.message)
             }
