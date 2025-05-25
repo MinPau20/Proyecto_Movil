@@ -8,7 +8,7 @@ export default function Login({navigation}){
 
     const handleSubmit = async () => {
         try {
-            const response = await fetch("http://localhost:3000/ingreso", {
+            const response = await fetch("http://192.168.1.11:3000/api/ingreso", {
                 method: "POST",
                 headers: { "Content-Type": "application/json"},
                 body: JSON.stringify(login)

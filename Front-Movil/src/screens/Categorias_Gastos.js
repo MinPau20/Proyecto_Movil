@@ -2,7 +2,36 @@ import React, {useState} from "react";
 import { StyleSheet, View, Text, TouchableOpacity, StatusBar, TextInput, Image } from "react-native";
 
 export default function Categorias_Gastos({navigation}){
-    const [mostrarCuadro, setMostrarCuadro] = useState(false);
+    const [mostrarCuadro, setMostrarCuadro] = useState(false)
+    const [nombreCategoria, setNombreCategoria] = useState('')
+    const [tipoCategoria, setTipoCategoria] = useState('gasto')
+    const [idUsuario2, setIdUsuario2] = useState(1)
+
+    const handleCrearCategoria = async () => {
+        const data = {
+            nombre: nombreCategoria,
+            tipo: tipoCategoria,
+            id_usuario2: idUsuario2
+        }
+
+        try {
+            const response = await fetch("http://192.168.1.11:3000/api/categorias", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(data)
+            })
+            const data = await response.json()
+            if (response.ok) {
+                alert(data.message)
+                setMostrarCuadro(false)
+                setNombreCategoria('')
+            } else {
+                alert(data.message)
+            }
+        } catch (error) {
+            console.error("Error al crear categoría:", error)
+        }
+    }
 
     return(
         <View style={styles.ContainerCategorias}>
@@ -53,7 +82,22 @@ export default function Categorias_Gastos({navigation}){
             {mostrarCuadro && (
                     <View style={styles.CuadroCategoria}>
                         <Text style={{ color: 'black' }}>Nombre de la categoría:</Text>
-                        <TextInput style={styles.InputCategorias} placeholder="Categoría" />
+                        <TextInput 
+                        style={styles.InputCategorias} 
+                        placeholder="Categoría" 
+                        value={nombreCategoria}
+                        onChangeText={setNombreCategoria}
+                        />
+                        <Text style={{ color: 'black' }}>Tipo (gasto/ingreso):</Text>
+                        <TextInput 
+                        style={styles.InputCategorias} 
+                        placeholder="Tipo" 
+                        value={tipoCategoria}
+                        onChangeText={setTipoCategoria}
+                        />
+                        <TouchableOpacity onPress={handleCrearCategoria}>
+                            <Text style={{color: 'green'}}>Guardar</Text>
+                        </TouchableOpacity>
                         <TouchableOpacity onPress={() => setMostrarCuadro(false)}>
                         <Text style={{ color: 'blue' }}>Cerrar</Text>
                         </TouchableOpacity>
